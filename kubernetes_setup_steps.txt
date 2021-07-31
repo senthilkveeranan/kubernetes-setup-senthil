@@ -1,0 +1,29 @@
+Setup preperation:
+
+On the kubernetes Master node - perform the following prework.
+
+1) Update master and nodes to latest package
+# yum update -y 
+
+2) Disable the firewall 
+# systemctl disable firewall 
+
+3) Disable the selinux
+# cat /etc/sysconfig/selinux
+SELINUX = disabled 
+
+4) Remove the crony entry and install ntp.
+# yum remove chrony  -y 
+# yum install ntp -y 
+# systemctl enable ntpd.service 
+# systemcrl start ntpd.service 
+
+5) Update the /etc/hosts on master and nodes in obsence of DNS server
+192.168.43.156  kube-master.example.com   kube-master
+192.168.43.100 kube-node-1.example.com    kube-node-1
+192.168.43.184 kube-node-2.example.com    kube-node-2
+
+6) Validate the kubernetes Master & nodes are able to ping each other using IP address
+# ping 192.168.43.100 
+
+ 
