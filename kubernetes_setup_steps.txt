@@ -1,3 +1,9 @@
+Please refer the below link:
+
+https://phoenixnap.com/kb/how-to-install-kubernetes-on-centos
+
+
+
 Setup preperation:
 
 On the kubernetes Master node - perform the following prework.
